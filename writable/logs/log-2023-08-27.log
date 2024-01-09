@@ -1,0 +1,6 @@
+CRITICAL - 2023-08-27 07:52:48 --> Declaration of App\Controllers\User::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\User.php on line 86.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2023-08-27 07:54:00 --> Declaration of App\Controllers\User::update() must be compatible with CodeIgniter\RESTful\ResourceController::update($id = null)
+in APPPATH\Controllers\User.php on line 86.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

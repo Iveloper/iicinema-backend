@@ -1,0 +1,180 @@
+ERROR - 2023-09-03 09:32:08 --> mysqli_sql_exception: Table 'iicinema-backend.users_moviess' doesn't exist in C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `movies_...', 0)
+#1 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `movies_...')
+#2 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `movies_...')
+#3 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `movies_...', Array, false)
+#4 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Models\FavoriteModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Controllers\User.php(119): App\Models\FavoriteModel->getUserFavorites('4', 'movies')
+#6 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(934): App\Controllers\User->fetchFavorites('4')
+#7 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#8 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Ivelin...')
+#11 {main}
+CRITICAL - 2023-09-03 09:32:09 --> Table 'iicinema-backend.users_moviess' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `movies_id`
+FROM `users_moviess`
+WHERE `user_id` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `movies_id`
+FROM `users_moviess`
+WHERE `user_id` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `movies_id`
+FROM `users_moviess`
+WHERE `user_id` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `movies_id`
+FROM `users_moviess`
+WHERE `user_id` = :user_id:', [...], false)
+ 5 APPPATH\Models\FavoriteModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\User.php(119): App\Models\FavoriteModel->getUserFavorites('4', 'movies')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->fetchFavorites('4')
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+ERROR - 2023-09-03 09:33:29 --> mysqli_sql_exception: Unknown column 'movies_id' in 'field list' in C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `movies_...', 0)
+#1 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `movies_...')
+#2 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `movies_...')
+#3 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `movies_...', Array, false)
+#4 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Models\FavoriteModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Controllers\User.php(119): App\Models\FavoriteModel->getUserFavorites('4', 'movies')
+#6 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(934): App\Controllers\User->fetchFavorites('4')
+#7 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#8 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Ivelin...')
+#11 {main}
+CRITICAL - 2023-09-03 09:33:29 --> Unknown column 'movies_id' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `movies_id`
+FROM `users_movies`
+WHERE `user_id` = \'4\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `movies_id`
+FROM `users_movies`
+WHERE `user_id` = \'4\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `movies_id`
+FROM `users_movies`
+WHERE `user_id` = \'4\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `movies_id`
+FROM `users_movies`
+WHERE `user_id` = :user_id:', [...], false)
+ 5 APPPATH\Models\FavoriteModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\User.php(119): App\Models\FavoriteModel->getUserFavorites('4', 'movies')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->fetchFavorites('4')
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-09-03 15:00:33 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\User.php on line 139.
+ 1 APPPATH\Controllers\User.php(139): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\app\\Controllers\\User.php', 139)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->addFavorite()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-09-03 15:01:25 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\User.php on line 139.
+ 1 APPPATH\Controllers\User.php(139): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\app\\Controllers\\User.php', 139)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->addFavorite()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-09-03 15:09:34 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table('')
+ 2 SYSTEMPATH\Model.php(832): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\User.php(144): CodeIgniter\Model->__call('isValidType', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->addFavorite()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-09-03 15:13:25 --> You must set the database table to be used with your query.
+in SYSTEMPATH\Database\BaseConnection.php on line 883.
+ 1 SYSTEMPATH\Model.php(642): CodeIgniter\Database\BaseConnection->table('')
+ 2 SYSTEMPATH\Model.php(832): CodeIgniter\Model->builder()
+ 3 APPPATH\Controllers\User.php(144): CodeIgniter\Model->__call('isValidType', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->addFavorite()
+ 5 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 6 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-09-03 15:18:35 --> Call to undefined method App\Models\FavoriteModel::isValidType
+in SYSTEMPATH\Model.php on line 842.
+ 1 APPPATH\Controllers\User.php(144): CodeIgniter\Model->__call('isValidType', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->addFavorite()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-09-03 15:28:20 --> Undefined array key "user_id"
+in APPPATH\Controllers\User.php on line 154.
+ 1 APPPATH\Controllers\User.php(154): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\app\\Controllers\\User.php', 154)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->removeFavorite()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-09-03 15:29:22 --> Call to undefined method CodeIgniter\HTTP\IncomingRequest::getDelete()
+in APPPATH\Controllers\User.php on line 152.
+ 1 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->removeFavorite()
+ 2 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 3 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-09-03 15:58:38 --> Undefined array key "user_id"
+in APPPATH\Controllers\User.php on line 139.
+ 1 APPPATH\Controllers\User.php(139): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\app\\Controllers\\User.php', 139)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->addFavorite()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-09-03 17:28:16 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\User.php on line 119.
+ 1 APPPATH\Controllers\User.php(119): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\app\\Controllers\\User.php', 119)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->fetchFavorites()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+ERROR - 2023-09-03 17:38:26 --> mysqli_sql_exception: Table 'iicinema-backend.users_moviess' doesn't exist in C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `movies_...', 0)
+#1 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `movies_...')
+#2 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `movies_...')
+#3 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `movies_...', Array, false)
+#4 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Models\FavoriteModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Controllers\User.php(123): App\Models\FavoriteModel->getUserFavorites(4, 'movies')
+#6 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(934): App\Controllers\User->fetchFavorites('4')
+#7 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#8 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Ivelin...')
+#11 {main}
+CRITICAL - 2023-09-03 17:38:26 --> Table 'iicinema-backend.users_moviess' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT `movies_id`
+FROM `users_moviess`
+WHERE `user_id` = 4', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `movies_id`
+FROM `users_moviess`
+WHERE `user_id` = 4')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `movies_id`
+FROM `users_moviess`
+WHERE `user_id` = 4')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT `movies_id`
+FROM `users_moviess`
+WHERE `user_id` = :user_id:', [...], false)
+ 5 APPPATH\Models\FavoriteModel.php(51): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\User.php(123): App\Models\FavoriteModel->getUserFavorites(4, 'movies')
+ 7 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->fetchFavorites('4')
+ 8 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 9 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')

@@ -1,0 +1,76 @@
+CRITICAL - 2023-06-13 16:36:13 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\User.php on line 48.
+ 1 APPPATH\Controllers\User.php(48): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\app\\Controllers\\User.php', 48)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->register()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-06-13 16:37:05 --> Trying to access array offset on value of type null
+in APPPATH\Controllers\User.php on line 47.
+ 1 APPPATH\Controllers\User.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\app\\Controllers\\User.php', 47)
+ 2 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->register()
+ 3 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 4 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-13 16:44:11 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'iicinema-backend' in C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('127.0.0.1', 'root', '', 'iicinema-backen...', 3306, '', 0)
+#1 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Controllers\User.php(42): CodeIgniter\Database\BaseConnection->query('SELECT 1')
+#4 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(934): App\Controllers\User->register()
+#5 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#6 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'iicinema-backend' in C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Controllers\User.php(42): CodeIgniter\Database\BaseConnection->query('SELECT 1')
+#3 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(934): App\Controllers\User->register()
+#4 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-06-13 16:44:11 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'iicinema-backend'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\User.php(42): CodeIgniter\Database\BaseConnection->query('SELECT 1')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->register()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2023-06-13 16:51:49 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'iicinema-backend' in C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('127.0.0.1', 'root', '', 'iicinema-backen...', 3306, '', 0)
+#1 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Controllers\User.php(42): CodeIgniter\Database\BaseConnection->query('SELECT 1')
+#4 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(934): App\Controllers\User->register()
+#5 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#6 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'iicinema-backend' in C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Controllers\User.php(42): CodeIgniter\Database\BaseConnection->query('SELECT 1')
+#3 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(934): App\Controllers\User->register()
+#4 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2023-06-13 16:51:49 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'iicinema-backend'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\User.php(42): CodeIgniter\Database\BaseConnection->query('SELECT 1')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->register()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

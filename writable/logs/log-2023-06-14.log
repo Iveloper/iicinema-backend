@@ -1,0 +1,44 @@
+ERROR - 2023-06-14 16:44:53 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'iicinema-backend' in C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('127.0.0.1', 'root', '', 'iicinema-backen...', 3306, '', 0)
+#1 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Controllers\User.php(42): CodeIgniter\Database\BaseConnection->query('SELECT 1')
+#4 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(934): App\Controllers\User->register()
+#5 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#6 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Ivelin...')
+#9 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'iicinema-backend' in C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\app\Controllers\User.php(42): CodeIgniter\Database\BaseConnection->query('SELECT 1')
+#3 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(934): App\Controllers\User->register()
+#4 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+#5 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#7 C:\Users\IvelinMorris\Desktop\viv\iicinema-backend\system\Commands\Server\rewrite.php(47): require_once('C:\\Users\\Ivelin...')
+#8 {main}
+CRITICAL - 2023-06-14 16:44:53 --> Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'iicinema-backend'
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 APPPATH\Controllers\User.php(42): CodeIgniter\Database\BaseConnection->query('SELECT 1')
+ 3 SYSTEMPATH\CodeIgniter.php(934): App\Controllers\User->register()
+ 4 SYSTEMPATH\CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\User))
+ 5 SYSTEMPATH\CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('C:\\Users\\IvelinMorris\\Desktop\\viv\\iicinema-backend\\public\\index.php')
+CRITICAL - 2023-06-14 18:46:25 --> The framework needs the following extension(s) installed and loaded: intl, mbstring.
+in SYSTEMPATH\CodeIgniter.php on line 226.
+ 1 SYSTEMPATH\CodeIgniter.php(226): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl, mbstring')
+ 2 SYSTEMPATH\CodeIgniter.php(190): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 FCPATH\index.php(55): CodeIgniter\CodeIgniter->initialize()
+CRITICAL - 2023-06-14 18:52:21 --> The framework needs the following extension(s) installed and loaded: intl, mbstring.
+in SYSTEMPATH\CodeIgniter.php on line 226.
+ 1 SYSTEMPATH\CodeIgniter.php(226): CodeIgniter\Exceptions\FrameworkException::forMissingExtension('intl, mbstring')
+ 2 SYSTEMPATH\CodeIgniter.php(190): CodeIgniter\CodeIgniter->resolvePlatformExtensions()
+ 3 FCPATH\index.php(55): CodeIgniter\CodeIgniter->initialize()
