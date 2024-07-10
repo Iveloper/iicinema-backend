@@ -1,47 +1,24 @@
 <?php
 
 namespace App\Controllers;
-
+use Config\App;
 use App\Models\RoleModel;
+use App\Controllers\BaseController;
+use CodeIgniter\API\ResponseTrait;
+use CodeIgniter\RESTful\ResourceController;
 
-class Roles extends BaseController
+class Roles extends ResourceController
 {
+    use ResponseTrait;
     protected $roleModel;
 
     public function __construct()
     {
-        $this->roleModel = new RoleModel();
+        $this->roleModel = new \App\Models\RoleModel();
     }
 
     public function index()
     {
-        $roles = $this->roleModel->findAll();
-
-        // Pass the data to your view or do further processing
-    }
-
-    public function create()
-    {
-        // Display the form to create a new role
-    }
-
-    public function store()
-    {
-        // Store the submitted role data into the database
-    }
-
-    public function edit($id)
-    {
-        // Display the form to edit a specific role
-    }
-
-    public function update($id)
-    {
-        // Update the specific role in the database
-    }
-
-    public function delete($id)
-    {
-        // Delete the specific role from the database
+        return $this->respond($this->roleModel->findAll());
     }
 }

@@ -11,12 +11,14 @@ class User extends ResourceController
 {
     use ResponseTrait;
 
+    public function __construct()
+    {
+        $this->userModel = new \App\Models\UserModel();
+    }
+
     public function index()
     {
-        $userModel = new UserModel();
-        $data['users'] = $userModel->findAll();
-
-        return $this->response->setJSON($movies);
+        return $this->userModel->findAll();
     }
 
     public function login()
@@ -29,19 +31,20 @@ class User extends ResourceController
         $userModel = new \App\Models\UserModel();
 
         // Find the user by username
-        $user = $userModel->where('email', $email)->first();
+        $user = $this->userModel->where('email', $email)->first();
 
         if (!$user) {
             return $this->respond(['message' => 'User not found'], 404);
         }
 
         // Verify hashed password
-        if (password_verify($password, $user['password'])) {
+        if (password_verify($password, $user['password']) && $user['is_approved'] == 1) {
             // Password is correct, return user details to the client
             $response = [
                 'id' => $user['id'],
                 'username' => $user['username'],
                 'email' => $user['email'],
+                'role_id' => $user['role_id']
             ];
 
             return $this->respond($response, 200);
@@ -70,8 +73,7 @@ class User extends ResourceController
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
         // Save the user data to the database
-        $userModel = new \App\Models\UserModel();
-        $userModel->insert([
+        $this->userModel->insert([
             'username' => $username,
             'email' => $email,
             'password' => $hashedPassword,
@@ -104,11 +106,60 @@ class User extends ResourceController
             'password' => $hashedPassword,
             'role_id' => 2
         ];
-        $userModel = new \App\Models\UserModel();
-        $userModel->update($user_id, $updatedData);
+        
+        $this->userModel->update($user_id, $updatedData);
         
         // Respond with a success message or other relevant data
         return $this->respond(['message' => 'User information updated successfully']);
+    }
+
+    public function delete($id = null)
+    {
+        if ($id === null) {
+            return $this->failValidationError('No ID provided');
+        }
+
+        $user = $this->userModel->find($id);
+        if (!$user) {
+            return $this->failNotFound('User not found');
+        }
+
+        if ($this->userModel->deleteUser($id)) {
+            return $this->respondDeleted(['status' => 'success', 'message' => 'User deleted successfully!']);
+        } else {
+            return $this->failServerError('Failed to delete user');
+        }
+    }
+
+    public function approve($id = null) {
+
+        if ($id === null) {
+            return $this->fail('No ID provided');
+        }
+
+        $this->userModel->approveUser($id);
+        
+        // Respond with a success message or other relevant data
+        return $this->respond(['message' => 'User approved successfully']);
+    }
+
+    public function changeRole($userId) {
+        $data = $this->request->getJSON();
+        $role_id = $data->role_id;
+
+        $this->userModel->update($userId, ['role_id' => $role_id]);
+
+        return $this->respond(['message' => 'User role changed successfully']);
+    }
+
+    public function getUnapproved()
+    {
+        return $this->respond($this->userModel->getUnapprovedUsers());
+    }
+
+    public function getAllUsersAndAuthors()
+    {
+        return $this->respond($this->userModel->getAllUsersAndAuthors());
     }
 
     public function fetchFavorites($userId = null)

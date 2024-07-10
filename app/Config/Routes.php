@@ -27,9 +27,7 @@ $routes->set404Override();
  * --------------------------------------------------------------------
  */
 
-// We get a performance increase by specifying the default
-// route since we don't have to scan directories.
-// $routes->get('/api/users/register', 'User::register');
+// User routes
 $routes->options('(:any)', 'User::handleOptionsRequest', ['filter' => 'cors']);
 $routes->post('api/users/register', 'User::register', ['filter' => 'cors']);
 $routes->post('api/users/login', 'User::login', ['filter' => 'cors']);
@@ -37,6 +35,33 @@ $routes->post('api/users/update', 'User::update', ['filter' => 'cors']);
 $routes->post('api/users/addFavorite', 'User::addFavorite', ['filter' => 'cors']);
 $routes->post('api/users/removeFavorite', 'User::removeFavorite', ['filter' => 'cors']);
 $routes->get('api/users/getFavorites/(:any)', 'User::fetchFavorites/$1', ['filter' => 'cors']);
+$routes->get('api/users/getUnapproved', 'User::getUnapproved', ['filter' => 'cors']);
+$routes->get('api/users/getAllUsersAndAuthors', 'User::getAllUsersAndAuthors', ['filter' => 'cors']);
+$routes->post('api/users/changeRole/(:any)', 'User::changeRole/$1', ['filter' => 'cors']);
+$routes->delete('api/users/delete/(:num)', 'User::delete/$1', ['filter' => 'cors']);
+$routes->get('api/users/approve/(:any)', 'User::approve/$1', ['filter' => 'cors']);
+$routes->get('api/users/roles', 'Roles::index', ['filter' => 'cors']);
+
+// Review routes
+$routes->get('api/reviews/(:any)', 'Reviews::getProductionReviews/$1', ['filter' => 'cors']);
+$routes->post('api/reviews/submit', 'Reviews::create', ['filter' => 'cors']);
+$routes->put('api/reviews/update/(:num)', 'Reviews::update/$1', ['filter' => 'cors']);
+$routes->delete('api/reviews/delete/(:num)', 'Reviews::delete/$1', ['filter' => 'cors']);
+
+// Article routes
+$routes->get('api/articles', 'Articles::getArticles', ['filter' => 'cors']);
+$routes->get('api/articles/(:num)', 'Articles::show/$1', ['filter' => 'cors']);
+$routes->post('api/articles/submit', 'Articles::create', ['filter' => 'cors']);
+$routes->put('api/articles/update/(:num)', 'Articles::update/$1', ['filter' => 'cors']);
+$routes->delete('api/articles/delete/(:num)', 'Articles::delete/$1', ['filter' => 'cors']);
+$routes->delete('api/articles/images/delete/(:num)', 'Articles::deleteImg/$1', ['filter' => 'cors']);
+
+// Comment routes
+$routes->get('api/comments/(:any)', 'Comments::getArticleComments/$1', ['filter' => 'cors']);
+$routes->post('api/comments/submit', 'Comments::create', ['filter' => 'cors']);
+$routes->put('api/comments/update/(:num)', 'Comments::update/$1', ['filter' => 'cors']);
+$routes->delete('api/comments/delete/(:num)', 'Comments::delete/$1', ['filter' => 'cors']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

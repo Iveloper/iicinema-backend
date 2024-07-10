@@ -18,9 +18,9 @@ class CORS extends BaseConfig
 
     public $allowedOrigins = ['http://localhost:4200']; // Update with the actual origin of your Angular app
 
-    public $allowedMethods = ['GET', 'POST', 'PUT', 'PATCH', 'OPTIONS'];
+    public $allowedMethods = ['*'];
 
-    public $allowedHeaders = ['Origin', 'Accept', 'Content-Type', 'X-Requested-With', 'Authorization'];
+    public $allowedHeaders = ['*'];
 
     public $exposedHeaders = [];
 
